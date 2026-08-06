@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 984 1050" width="984" height="1050" role="img" aria-label="Μαρία Βουγιούκα — Μαιευτήρας Χειρουργός Γυναικολόγος">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"  stop-color="#f4ebf1" />
+      <stop offset="55%" stop-color="#efd6e2" />
+      <stop offset="100%" stop-color="#e8d8e3" />
+    </linearGradient>
+    <style>
+      .m  { fill: none; stroke: #c48fab; stroke-width: 3; opacity: 0.85; }
+      .t1 { font-family: Georgia, "Times New Roman", serif; font-size: 66px; font-weight: 500; fill: #5c3c59; text-anchor: middle; }
+      .t2 { font-family: Helvetica, Arial, sans-serif; font-size: 24px; font-weight: 400; fill: #7e5578; letter-spacing: 6px; text-anchor: middle; }
+    </style>
+  </defs>
+
+  <rect width="984" height="1050" fill="url(#bg)" />
+  <circle cx="492" cy="430" r="300" fill="#fbf7f9" opacity="0.45" />
+
+  <!-- Emblem -->
+  <g transform="translate(492 430) scale(5.4)">
+    <circle class="m" cx="0" cy="0" r="34" />
+    <path class="m" d="M0 18 C -13 6, -13 -12, 0 -22 C 13 -12, 13 6, 0 18 Z" />
+    <path class="m" d="M0 18 C -20 10, -24 -4, -22 -12 C -10 -10, -3 2, 0 18 Z" />
+    <path class="m" d="M0 18 C 20 10, 24 -4, 22 -12 C 10 -10, 3 2, 0 18 Z" />
+  </g>
+
+  <text class="t1" x="492" y="880">Μαρία Βουγιούκα</text>
+  <text class="t2" x="492" y="932">ΓΥΝΑΙΚΟΛΟΓΟΣ</text>
+</svg>
