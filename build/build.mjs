@@ -151,6 +151,7 @@ function header(depth, active = "") {
       <ul class="nav-links">
         <li><a href="${r("index.html")}"${on("home")}>Αρχική</a></li>
         <li><a href="${r("oi-iatroi.html")}"${on("about")}>Οι Ιατροί</a></li>
+        <li><a href="${r("index.html#clinic-space")}">Ο χώρος μας</a></li>
         <li class="has-sub">
           <a href="${r("ypiresies/index.html")}"${on("services")}>Υπηρεσίες</a>
           <ul class="sub">
@@ -234,6 +235,7 @@ function footer(depth) {
         <nav aria-label="Πλοήγηση" class="footer-links">
           <a href="${r("index.html")}">Αρχική</a>
           <a href="${r("oi-iatroi.html")}">Οι Ιατροί</a>
+          <a href="${r("index.html#clinic-space")}">Ο χώρος μας</a>
           <a href="${r("ypiresies/index.html")}">Όλες οι Υπηρεσίες</a>
           <a href="${r("perioches/index.html")}">Περιοχές που Εξυπηρετούμε</a>
           <a href="${r("blog/index.html")}">Blog</a>
@@ -278,6 +280,16 @@ function pageHome() {
           <span class="svc-more">Μάθετε περισσότερα →</span>
         </a>`
   ).join("");
+
+  const spacePhotos = [
+    ["assets/clinic-space-1.jpg", "Εξεταστήριο γυναικολογικού ιατρείου", 1200, 1600],
+    ["assets/clinic-space-2.jpg", "Χώρος υποδοχής του ιατρείου", 1200, 1600],
+    ["assets/clinic-space-3.jpg", "Χώρος αναμονής του ιατρείου", 1200, 1600],
+    ["assets/clinic-space-4.jpg", "Καθιστικό και διακόσμηση στον χώρο αναμονής", 1600, 1200],
+  ].map(([src, alt, width, height]) => `
+          <figure class="space-photo reveal">
+            <img src="${r(src)}" alt="${attr(alt)}" width="${width}" height="${height}" loading="lazy" decoding="async" />
+          </figure>`).join("");
 
   const ld = [
     { "@context": "https://schema.org", ...clinicLD },
@@ -366,6 +378,18 @@ function pageHome() {
         <span class="philosophy-mark" aria-hidden="true">&ldquo;</span>
         <blockquote>Η ιατρική δεν είναι μόνο διάγνωση και θεραπεία — είναι και <em>χρόνος</em>. Χρόνος να ακούσεις, να εξηγήσεις και να αποφασίσεις μαζί με την ασθενή, όχι για εκείνη.</blockquote>
         <cite class="philosophy-cite">Δρ. Μενέλαος Λαμπρόπουλος · Μαιευτήρας – Χειρουργός Γυναικολόγος</cite>
+      </div>
+    </section>
+
+    <section class="clinic-space" id="clinic-space">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Ο χώρος μας</p>
+          <h2 class="section-title">Ένας ήρεμος και φροντισμένος χώρος για κάθε επίσκεψη</h2>
+        </div>
+        <div class="space-grid">
+${spacePhotos}
+        </div>
       </div>
     </section>
 
