@@ -58,7 +58,7 @@ const clinicLD = {
   openingHoursSpecification: [{
     "@type": "OpeningHoursSpecification",
     dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-    opens: "17:00", closes: "22:00",
+    opens: "17:00", closes: "21:00",
   }],
   ...(SOCIALS.length ? { sameAs: SOCIALS.map(([, u]) => u) } : {}),
   founder: {

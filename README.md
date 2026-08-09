@@ -31,7 +31,7 @@ build/                         Γεννήτρια (data.mjs + build.mjs)
   μοναδικά keywords, μοναδικό `<title>` & `meta description` ανά σελίδα
   (ελεγμένο: 0 διπλότυπα, 0 σπασμένοι σύνδεσμοι).
 - **Structured data (JSON-LD)**: Physician/MedicalBusiness/LocalBusiness
-  (διεύθυνση, ωράριο 17:00–22:00, geo, medicalSpecialty), BreadcrumbList παντού,
+  (διεύθυνση, ωράριο 17:00–21:00, geo, medicalSpecialty), BreadcrumbList παντού,
   MedicalProcedure στις υπηρεσίες, FAQPage, BlogPosting, WebSite/ItemList/Blog.
 - **Open Graph & Twitter cards**, canonical URLs, `lang="el"`, semantic HTML,
   internal linking, alt σε εικόνες, breadcrumbs.
