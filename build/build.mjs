@@ -122,8 +122,8 @@ function head({ depth, title, desc, canonical, keywords, ld = [], image = "asset
   <meta name="twitter:description" content="${attr(desc)}" />
   <meta name="twitter:image" content="${abs(image)}" />
 
-  <link rel="icon" type="image/svg+xml" href="${r("assets/logo.svg")}" />
-  <link rel="apple-touch-icon" href="${r("assets/logo.svg")}" />
+  <link rel="icon" type="image/svg+xml" href="${r("assets/logo-icon.svg")}" />
+  <link rel="apple-touch-icon" href="${r("assets/logo-icon.svg")}" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -145,7 +145,7 @@ function header(depth, active = "") {
   <header class="site-header" id="top">
     <nav class="nav container" aria-label="Κύρια πλοήγηση">
       <a href="${r("index.html")}" class="brand" aria-label="${attr(BIZ.name)} — Αρχική">
-        <img src="${r("assets/logo.svg")}" alt="${attr(BIZ.name)}" class="brand-logo" width="120" height="120" />
+        <img src="${r("assets/logo-mark.svg")}" alt="${attr(BIZ.name)}" class="brand-logo" width="755" height="371" />
       </a>
       <button class="nav-toggle" aria-label="Άνοιγμα μενού" aria-expanded="false"><span></span><span></span><span></span></button>
       <ul class="nav-links">
@@ -215,7 +215,7 @@ function footer(depth) {
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <img src="${r("assets/logo.svg")}" alt="${attr(BIZ.name)}" class="footer-logo" width="120" height="120" />
+        <img src="${r("assets/logo-light.svg")}" alt="${attr(BIZ.name)}" class="footer-logo" width="778" height="406" />
         <p class="footer-tag">${esc(BIZ.tagline)}</p>
         <p class="footer-addr">
           ${esc(BIZ.street)}<br />

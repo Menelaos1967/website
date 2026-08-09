@@ -19,7 +19,9 @@ perioches/<περιοχή>.html        6 τοπικές σελίδες SEO (Κέ
 blog/index.html                Blog (hub)
 blog/<άρθρο>.html               6 άρθρα (long-tail keywords)
 sitemap.xml, robots.txt        Τεχνικό SEO
-assets/                        logo.svg, dr-lampropoulos.svg, dr-vougiouka.svg
+assets/                        logo.svg (πλήρες lockup), logo-light.svg (για σκούρο
+                               φόντο), logo-mark.svg (μονόγραμμα — header),
+                               logo-icon.svg (favicon), dr-*.svg (προσωρινά portraits),
                                viografiko-*.pdf (πλήρη βιογραφικά προς λήψη)
 styles.css, main.js            Κοινό στυλ & συμπεριφορά
 build/                         Γεννήτρια (data.mjs + build.mjs)
@@ -66,9 +68,10 @@ CLINICBRAIN. Χρειάζονται έγκριση από τον ιατρό:
    Αλλάζει κεντρικά από τις CSS variables στην κορυφή του `styles.css`.
 5. **Τ.Κ. & συντεταγμένες**: `54623` και `lat 40.6367 / lng 22.9463` είναι
    προσεγγιστικά για την Εγνατίας 74. Διορθώστε στο `data.mjs` για σωστό pin.
-6. **Εικόνες**: δεν δόθηκε λογότυπο ούτε φωτογραφίες. Τα `assets/logo.svg`,
-   `dr-lampropoulos.svg`, `dr-vougiouka.svg` είναι προσωρινά γραφικά.
-   Αντικαταστήστε με πραγματικό λογότυπο και επαγγελματικές φωτογραφίες
+6. **Εικόνες**: το λογότυπο (`logo*.svg`) είναι διανυσματική απόδοση του
+   επίσημου λογοτύπου B|L του ιατρείου, στην παλέτα του site. Τα
+   `dr-lampropoulos.svg`, `dr-vougiouka.svg` είναι ακόμη προσωρινά γραφικά.
+   Αντικαταστήστε με επαγγελματικές φωτογραφίες
    (portrait ~985×1060) — αρκεί να αλλάξουν τα paths στο `build.mjs`.
 7. **Social**: δεν δόθηκαν προφίλ. Συμπληρώστε `instagram` / `facebook` στο
    `data.mjs` και εμφανίζονται αυτόματα σε footer, επικοινωνία & schema.
