@@ -11,17 +11,23 @@ export const BIZ = {
   name: "Specialized & Personalized Medical Care",
   legalName: "Specialized & Personalized Medical Care — Δρ. Μενέλαος Λαμπρόπουλος",
   doctor: "Δρ. Μενέλαος Λαμπρόπουλος",
-  doctorFull: "Δρ. Μενέλαος Λαμπρόπουλος M.D., MSc",
+  doctorFull: "Δρ. Μενέλαος Λαμπρόπουλος",
   doctorEn: "Dr. Menelaos Lampropoulos",
-  role: "Μαιευτήρας – Χειρουργός Γυναικολόγος",
-  doctor2: "Μαρία Βουγιούκα",
-  role2: "Μαιευτήρας – Γυναικολόγος",
+  role: "Χειρουργός Μαιευτήρας Γυναικολόγος",
+  doctor2: "Δρ. Μαρία Βουγιούκα",
+  role2: "Χειρουργός Μαιευτήρας Γυναικολόγος",
   tagline: "Εξατομικευμένη φροντίδα, σε κάθε στάδιο.",
   phoneDisplay: "2310 282080",
   phoneIntl: "+302310282080",
   mobileDisplay: "694 307 3014",
   mobileIntl: "+306943073014",
   email: "menelaoslambropoulos@msn.com",
+  // Κινητό & email της Δρ. Μαρίας Βουγιούκα
+  mobile2Display: "694 307 3015",
+  mobile2Intl: "+306943073015",
+  email2: "mariavou66@gmail.com",
+  // Γραμματεία ιατρείου
+  secretary: "Μόνικα",
   street: "Εγνατίας 74",
   area: "Κέντρο",
   city: "Θεσσαλονίκη",
@@ -48,9 +54,7 @@ export const CVS = [
   {
     id: "menelaos-lampropoulos",
     name: "Δρ. Μενέλαος Λαμπρόπουλος",
-    role: "M.D., MSc · Μαιευτήρας – Χειρουργός Γυναικολόγος",
-    pdf: "assets/viografiko-menelaos-lampropoulos.pdf",
-    pdfName: "Βιογραφικό-Μενέλαος-Λαμπρόπουλος.pdf",
+    role: "Χειρουργός Μαιευτήρας Γυναικολόγος",
     languages: ["Ελληνικά", "Γερμανικά", "Αγγλικά"],
     groups: [
       {
@@ -113,10 +117,8 @@ export const CVS = [
   },
   {
     id: "maria-vougiouka",
-    name: "Μαρία Βουγιούκα",
-    role: "Μαιευτήρας – Γυναικολόγος",
-    pdf: "assets/viografiko-maria-vougiouka.pdf",
-    pdfName: "Βιογραφικό-Μαρία-Βουγιούκα.pdf",
+    name: "Δρ. Μαρία Βουγιούκα",
+    role: "Χειρουργός Μαιευτήρας Γυναικολόγος",
     languages: ["Ελληνικά", "Αγγλικά"],
     groups: [
       {

@@ -247,8 +247,10 @@ function footer(depth) {
         <h3>Επικοινωνία</h3>
         <nav aria-label="Επικοινωνία" class="footer-links">
           <a href="tel:${BIZ.phoneIntl}">${esc(BIZ.phoneDisplay)}</a>
-          <a href="tel:${BIZ.mobileIntl}">${esc(BIZ.mobileDisplay)}</a>
+          <a href="tel:${BIZ.mobileIntl}">Δρ. Μ. Λαμπρόπουλος · ${esc(BIZ.mobileDisplay)}</a>
           <a href="mailto:${BIZ.email}">${esc(BIZ.email)}</a>
+          <a href="tel:${BIZ.mobile2Intl}">Δρ. Μ. Βουγιούκα · ${esc(BIZ.mobile2Display)}</a>
+          <a href="mailto:${BIZ.email2}">${esc(BIZ.email2)}</a>
         </nav>
         <p class="footer-hours">${esc(BIZ.hours)}</p>
       </div>
@@ -316,7 +318,7 @@ function pageHome() {
   return head({
     depth,
     title: `Γυναικολόγος Θεσσαλονίκη | Δρ. Μενέλαος Λαμπρόπουλος — Εγνατίας 74`,
-    desc: `Δρ. Μενέλαος Λαμπρόπουλος M.D., MSc — Μαιευτήρας Χειρουργός Γυναικολόγος, Εγνατίας 74, Θεσσαλονίκη. Γυναικολογικός έλεγχος, εγκυμοσύνη, χειρουργική, υπογονιμότητα.`,
+    desc: `Δρ. Μενέλαος Λαμπρόπουλος & Δρ. Μαρία Βουγιούκα — Χειρουργοί Μαιευτήρες Γυναικολόγοι, Εγνατίας 74, Θεσσαλονίκη. Γυναικολογικός έλεγχος, εγκυμοσύνη, χειρουργική, υπογονιμότητα.`,
     canonical: "index.html",
     keywords: "γυναικολόγος Θεσσαλονίκη, μαιευτήρας Θεσσαλονίκη, γυναικολόγος Εγνατίας, test pap, εγκυμοσύνη, λαπαροσκοπική χειρουργική, υπογονιμότητα, εμμηνόπαυση, Μενέλαος Λαμπρόπουλος",
     ld,
@@ -326,7 +328,7 @@ function pageHome() {
   <main id="main">
     <section class="hero" id="hero">
       <div class="hero-inner container">
-        <p class="eyebrow reveal">Μαιευτήρας – Χειρουργός Γυναικολόγος · Θεσσαλονίκη</p>
+        <p class="eyebrow reveal">Χειρουργός Μαιευτήρας Γυναικολόγος · Θεσσαλονίκη</p>
         <h1 class="hero-title reveal">Specialized<span class="hero-title-sub">&amp; Personalized Care</span></h1>
         <p class="hero-tagline reveal">Εξατομικευμένη φροντίδα, σε κάθε <em>στάδιο.</em></p>
         <p class="hero-lead reveal">Δεκαετίες κλινικής και χειρουργικής εμπειρίας, σε ένα ιατρείο που δίνει σε κάθε γυναίκα τον χρόνο που της αναλογεί.</p>
@@ -351,42 +353,33 @@ function pageHome() {
       </div>
     </div>
 
-    <section class="about" id="about">
-      <div class="container about-grid">
-        <div class="about-media reveal">
-          <img src="${r("assets/dr-lampropoulos.svg")}" alt="Δρ. Μενέλαος Λαμπρόπουλος, Μαιευτήρας Χειρουργός Γυναικολόγος — Θεσσαλονίκη" width="984" height="1050" />
-          <div class="about-badge">
-            <span class="about-badge-num">M.D.</span>
-            <span class="about-badge-label">Συντονιστής Διευθυντής<br />Χειρουργικού Τομέα</span>
-          </div>
+    <section class="doctors" id="about">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Οι Ιατροί</p>
+          <h2 class="section-title">Δύο ιατροί, μία φροντίδα</h2>
         </div>
-        <div class="about-copy">
-          <p class="eyebrow reveal">Ο Ιατρός</p>
-          <h2 class="section-title reveal">Δρ. Μενέλαος Λαμπρόπουλος</h2>
-          <p class="about-role reveal">M.D., MSc · Μαιευτήρας – Χειρουργός Γυναικολόγος</p>
-          <p class="reveal">Συντονιστής Διευθυντής στο Νοσοκομείο «Ο Άγιος Δημήτριος» Θεσσαλονίκης, Πρόεδρος του Χειρουργικού Τομέα και Πρόεδρος του Επιστημονικού Συμβουλίου — με μακρά διαδρομή στη μαιευτική και τη γυναικολογική χειρουργική.</p>
-          <p class="reveal">Μεταπτυχιακή εξειδίκευση στις προκαρκινικές παθήσεις, μετεκπαίδευση στην ενδοσκοπική γυναικολογία και εκπαίδευση στη λαπαροσκοπική χειρουργική στο IRCAD της Γαλλίας.</p>
-          <a href="${r("oi-iatroi.html#cv-menelaos-lampropoulos")}" class="btn btn-ghost reveal">Αναλυτικό βιογραφικό →</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="about about--alt" id="about-vougiouka">
-      <div class="container about-grid">
-        <div class="about-media reveal">
-          <img src="${r("assets/dr-vougiouka.svg")}" alt="Μαρία Βουγιούκα, Μαιευτήρας Γυναικολόγος — Θεσσαλονίκη" width="984" height="1050" />
-          <div class="about-badge">
-            <span class="about-badge-num">Γυν.</span>
-            <span class="about-badge-label">Μαιευτήρας<br />Γυναικολόγος</span>
-          </div>
-        </div>
-        <div class="about-copy">
-          <p class="eyebrow reveal">Η Ιατρός</p>
-          <h2 class="section-title reveal">Μαρία Βουγιούκα</h2>
-          <p class="about-role reveal">Μαιευτήρας – Γυναικολόγος</p>
-          <p class="reveal">Με πορεία σε πανεπιστημιακές και νοσοκομειακές κλινικές της Θεσσαλονίκης, της Βέροιας και της Ρόδου, ασκεί την ειδικότητά της στο ιατρείο της Εγνατίας 74 από το 2008.</p>
-          <p class="reveal">Η παρουσία δύο ιατρών σημαίνει διπλή κλινική ματιά, μεγαλύτερη διαθεσιμότητα ραντεβού και τη δυνατότητα κάθε γυναίκα να επιλέξει τον ιατρό με τον οποίο νιώθει πιο άνετα.</p>
-          <a href="${r("oi-iatroi.html#cv-maria-vougiouka")}" class="btn btn-ghost reveal">Αναλυτικό βιογραφικό →</a>
+        <div class="doctors-grid">
+          <article class="doc reveal">
+            <div class="doc-media">
+              <img src="${r("assets/dr-lampropoulos.svg")}" alt="Δρ. Μενέλαος Λαμπρόπουλος, Χειρουργός Μαιευτήρας Γυναικολόγος — Θεσσαλονίκη" width="984" height="1050" />
+            </div>
+            <h3 class="doc-name">Δρ. Μενέλαος Λαμπρόπουλος</h3>
+            <p class="doc-role">Χειρουργός Μαιευτήρας Γυναικολόγος</p>
+            <p>Συντονιστής Διευθυντής στο Νοσοκομείο «Ο Άγιος Δημήτριος» Θεσσαλονίκης, Πρόεδρος του Χειρουργικού Τομέα και Πρόεδρος του Επιστημονικού Συμβουλίου — με μακρά διαδρομή στη μαιευτική και τη γυναικολογική χειρουργική.</p>
+            <p>Μεταπτυχιακή εξειδίκευση στις προκαρκινικές παθήσεις, μετεκπαίδευση στην ενδοσκοπική γυναικολογία και εκπαίδευση στη λαπαροσκοπική χειρουργική στο IRCAD της Γαλλίας.</p>
+            <a href="${r("oi-iatroi.html#cv-menelaos-lampropoulos")}" class="btn btn-ghost">Αναλυτικό βιογραφικό →</a>
+          </article>
+          <article class="doc reveal">
+            <div class="doc-media">
+              <img src="${r("assets/dr-vougiouka.svg")}" alt="Δρ. Μαρία Βουγιούκα, Χειρουργός Μαιευτήρας Γυναικολόγος — Θεσσαλονίκη" width="984" height="1050" />
+            </div>
+            <h3 class="doc-name">Δρ. Μαρία Βουγιούκα</h3>
+            <p class="doc-role">Χειρουργός Μαιευτήρας Γυναικολόγος</p>
+            <p>Με πορεία σε πανεπιστημιακές και νοσοκομειακές κλινικές της Θεσσαλονίκης, της Βέροιας και της Ρόδου, ασκεί την ειδικότητά της στο ιατρείο της Εγνατίας 74 από το 2008.</p>
+            <p>Η παρουσία δύο ιατρών σημαίνει διπλή κλινική ματιά, μεγαλύτερη διαθεσιμότητα ραντεβού και τη δυνατότητα κάθε γυναίκα να επιλέξει τον ιατρό με τον οποίο νιώθει πιο άνετα.</p>
+            <a href="${r("oi-iatroi.html#cv-maria-vougiouka")}" class="btn btn-ghost">Αναλυτικό βιογραφικό →</a>
+          </article>
         </div>
       </div>
     </section>
@@ -407,7 +400,7 @@ function pageHome() {
         <p class="eyebrow">Η Φιλοσοφία μας</p>
         <span class="philosophy-mark" aria-hidden="true">&ldquo;</span>
         <blockquote>Η ιατρική δεν είναι μόνο διάγνωση και θεραπεία — είναι και <em>χρόνος</em>. Χρόνος να ακούσεις, να εξηγήσεις και να αποφασίσεις μαζί με την ασθενή, όχι για εκείνη.</blockquote>
-        <cite class="philosophy-cite">Δρ. Μενέλαος Λαμπρόπουλος · Μαιευτήρας – Χειρουργός Γυναικολόγος</cite>
+        <cite class="philosophy-cite">Specialized &amp; Personalized Medical Care</cite>
       </div>
     </section>
 
@@ -436,7 +429,7 @@ function pageHome() {
     footer(depth);
 }
 
-// ---- CV block (structured summary + full PDF) ------------------------
+// ---- CV block (structured summary) -----------------------------------
 function cvBlock(depth, cv) {
   const r = (p) => rel(depth, p);
   const groups = cv.groups
@@ -463,7 +456,6 @@ function cvBlock(depth, cv) {
             <p class="cv-role">${esc(cv.role)}</p>
             <p class="cv-langs">Γλώσσες: ${esc(cv.languages.join(" · "))}</p>
           </div>
-          <a class="btn btn-primary cv-dl" href="${r(cv.pdf)}" download="${attr(cv.pdfName)}" type="application/pdf">Πλήρες βιογραφικό (PDF)</a>
         </header>
         <div class="cv-groups">${groups}
         </div>
@@ -507,7 +499,6 @@ function pageAbout() {
       worksFor: { "@id": `${BASE}/#clinic` },
       alumniOf: { "@type": "CollegeOrUniversity", name: "Ιατρική Σχολή Αριστοτελείου Πανεπιστημίου Θεσσαλονίκης" },
       knowsLanguage: CVS[0].languages,
-      subjectOf: { "@type": "DigitalDocument", name: "Βιογραφικό σημείωμα", url: abs(CVS[0].pdf), encodingFormat: "application/pdf" },
       ...(SOCIALS.length ? { sameAs: SOCIALS.map(([, u]) => u) } : {}),
     },
     {
@@ -521,13 +512,12 @@ function pageAbout() {
       worksFor: { "@id": `${BASE}/#clinic` },
       alumniOf: { "@type": "CollegeOrUniversity", name: "Ιατρική Σχολή Αριστοτελείου Πανεπιστημίου Θεσσαλονίκης" },
       knowsLanguage: CVS[1].languages,
-      subjectOf: { "@type": "DigitalDocument", name: "Βιογραφικό σημείωμα", url: abs(CVS[1].pdf), encodingFormat: "application/pdf" },
     },
   ];
   return head({
     depth,
-    title: "Δρ. Μενέλαος Λαμπρόπουλος & Μαρία Βουγιούκα — Γυναικολόγοι Θεσσαλονίκη",
-    desc: "Γνωρίστε τον Δρ. Μενέλαο Λαμπρόπουλο M.D., MSc — Συντονιστή Διευθυντή & Πρόεδρο Χειρουργικού Τομέα — και τη γυναικολόγο Μαρία Βουγιούκα, στο ιατρείο της Εγνατίας 74.",
+    title: "Δρ. Μενέλαος Λαμπρόπουλος & Δρ. Μαρία Βουγιούκα — Γυναικολόγοι Θεσσαλονίκη",
+    desc: "Γνωρίστε τον Δρ. Μενέλαο Λαμπρόπουλο — Συντονιστή Διευθυντή & Πρόεδρο Χειρουργικού Τομέα — και τη Δρ. Μαρία Βουγιούκα, Χειρουργούς Μαιευτήρες Γυναικολόγους, στο ιατρείο της Εγνατίας 74.",
     canonical: "oi-iatroi.html",
     keywords: "Μενέλαος Λαμπρόπουλος γυναικολόγος, Μαρία Βουγιούκα γυναικολόγος, βιογραφικό γυναικολόγου Θεσσαλονίκη, συντονιστής διευθυντής Άγιος Δημήτριος",
     image: "assets/dr-lampropoulos.svg",
@@ -538,21 +528,39 @@ function pageAbout() {
     crumbs(depth, trail) +
     `
   <main id="main">
-    <section class="about about-page">
-      <div class="container about-grid">
-        <div class="about-media reveal">
-          <img src="${r("assets/dr-lampropoulos.svg")}" alt="Δρ. Μενέλαος Λαμπρόπουλος, Μαιευτήρας Χειρουργός Γυναικολόγος" width="984" height="1050" />
-          <div class="about-badge"><span class="about-badge-num">M.D.</span><span class="about-badge-label">MSc · Χειρουργός<br />Γυναικολόγος</span></div>
-        </div>
-        <div class="about-copy">
-          <p class="eyebrow reveal">Ο Ιατρός</p>
-          <h1 class="section-title reveal">Δρ. Μενέλαος Λαμπρόπουλος</h1>
-          <p class="about-role reveal">M.D., MSc · Μαιευτήρας – Χειρουργός Γυναικολόγος</p>
-          <p class="reveal">Ο Δρ. Μενέλαος Λαμπρόπουλος είναι Μαιευτήρας – Χειρουργός Γυναικολόγος με πολυετή κλινική και χειρουργική εμπειρία στη Θεσσαλονίκη, τόσο στον δημόσιο όσο και στον ιδιωτικό τομέα.</p>
-          <p class="reveal">Υπηρετεί ως <strong>Συντονιστής Διευθυντής</strong> στο Νοσοκομείο «Ο Άγιος Δημήτριος» Θεσσαλονίκης, θέση που συνδυάζει την καθημερινή κλινική πράξη με την οργάνωση και εποπτεία της λειτουργίας της κλινικής.</p>
-          <p class="reveal">Παράλληλα διατελεί <strong>Πρόεδρος του Χειρουργικού Τομέα</strong> και <strong>Πρόεδρος του Επιστημονικού Συμβουλίου</strong> του νοσοκομείου — ρόλοι που αντανακλούν τόσο τη χειρουργική του εμπειρία όσο και τη διαρκή ενασχόλησή του με την επιστημονική τεκμηρίωση και την εκπαίδευση.</p>
-          <p class="reveal">Στο ιατρείο του, στην Εγνατίας 74, μεταφέρει την ίδια νοσοκομειακή αυστηρότητα σε ένα πλαίσιο προσωπικό και ήρεμο: ραντεβού διάρκειας ${esc(BIZ.slot)}, αναλυτική εξήγηση κάθε εύρηματος και θεραπευτικό πλάνο που αποφασίζεται από κοινού.</p>
-          <a href="#cv-menelaos-lampropoulos" class="btn btn-ghost reveal">Αναλυτικό βιογραφικό →</a>
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow reveal">Οι Ιατροί</p>
+        <h1 class="page-title reveal">Δρ. Μενέλαος Λαμπρόπουλος &amp; Δρ. Μαρία Βουγιούκα</h1>
+        <p class="page-lead reveal">Δύο ιατροί στο ίδιο ιατρείο, στην Εγνατίας 74: διπλή κλινική ματιά, μεγαλύτερη διαθεσιμότητα ραντεβού και συνέχεια στην παρακολούθηση.</p>
+      </div>
+    </section>
+
+    <section class="doctors doctors--page">
+      <div class="container">
+        <div class="doctors-grid">
+          <article class="doc reveal">
+            <div class="doc-media">
+              <img src="${r("assets/dr-lampropoulos.svg")}" alt="Δρ. Μενέλαος Λαμπρόπουλος, Χειρουργός Μαιευτήρας Γυναικολόγος" width="984" height="1050" />
+            </div>
+            <h2 class="doc-name">Δρ. Μενέλαος Λαμπρόπουλος</h2>
+            <p class="doc-role">Χειρουργός Μαιευτήρας Γυναικολόγος</p>
+            <p>Ο Δρ. Μενέλαος Λαμπρόπουλος είναι Χειρουργός Μαιευτήρας Γυναικολόγος με πολυετή κλινική και χειρουργική εμπειρία στη Θεσσαλονίκη, τόσο στον δημόσιο όσο και στον ιδιωτικό τομέα.</p>
+            <p>Υπηρετεί ως <strong>Συντονιστής Διευθυντής</strong> στο Νοσοκομείο «Ο Άγιος Δημήτριος» Θεσσαλονίκης, θέση που συνδυάζει την καθημερινή κλινική πράξη με την οργάνωση και εποπτεία της λειτουργίας της κλινικής. Παράλληλα διατελεί <strong>Πρόεδρος του Χειρουργικού Τομέα</strong> και <strong>Πρόεδρος του Επιστημονικού Συμβουλίου</strong> του νοσοκομείου.</p>
+            <p>Στο ιατρείο του, στην Εγνατίας 74, μεταφέρει την ίδια νοσοκομειακή αυστηρότητα σε ένα πλαίσιο προσωπικό και ήρεμο: ραντεβού διάρκειας ${esc(BIZ.slot)}, αναλυτική εξήγηση κάθε ευρήματος και θεραπευτικό πλάνο που αποφασίζεται από κοινού.</p>
+            <a href="#cv-menelaos-lampropoulos" class="btn btn-ghost">Αναλυτικό βιογραφικό →</a>
+          </article>
+          <article class="doc reveal">
+            <div class="doc-media">
+              <img src="${r("assets/dr-vougiouka.svg")}" alt="Δρ. Μαρία Βουγιούκα, Χειρουργός Μαιευτήρας Γυναικολόγος" width="984" height="1050" />
+            </div>
+            <h2 class="doc-name">Δρ. Μαρία Βουγιούκα</h2>
+            <p class="doc-role">Χειρουργός Μαιευτήρας Γυναικολόγος</p>
+            <p>Η Δρ. Μαρία Βουγιούκα είναι Χειρουργός Μαιευτήρας Γυναικολόγος και συνεργάζεται στο ιατρείο της Εγνατίας 74, καλύπτοντας όλο το φάσμα της γυναικολογικής και μαιευτικής φροντίδας.</p>
+            <p>Με πορεία σε πανεπιστημιακές και νοσοκομειακές κλινικές της Θεσσαλονίκης, της Βέροιας και της Ρόδου, ασκεί την ειδικότητά της στο ιατρείο από το 2008 — ιδίως στον τακτικό προληπτικό έλεγχο και στην παρακολούθηση της εγκυμοσύνης.</p>
+            <p>Τα περιστατικά συζητούνται από κοινού, ώστε το θεραπευτικό πλάνο να προκύπτει από τη σύνθεση δύο κλινικών ματιών.</p>
+            <a href="#cv-maria-vougiouka" class="btn btn-ghost">Αναλυτικό βιογραφικό →</a>
+          </article>
         </div>
       </div>
     </section>
@@ -563,25 +571,7 @@ function pageAbout() {
           <div class="cred reveal"><span class="cred-k">Συντονιστής Διευθυντής</span><span class="cred-v">Νοσοκομείο «Ο Άγιος Δημήτριος», Θεσσαλονίκη</span></div>
           <div class="cred reveal"><span class="cred-k">Πρόεδρος Χειρουργικού Τομέα</span><span class="cred-v">Εποπτεία &amp; συντονισμός χειρουργικών κλινικών</span></div>
           <div class="cred reveal"><span class="cred-k">Πρόεδρος Επιστημονικού Συμβουλίου</span><span class="cred-v">Επιστημονική τεκμηρίωση &amp; εκπαίδευση</span></div>
-          <div class="cred reveal"><span class="cred-k">M.D., MSc</span><span class="cred-v">Μαιευτική – Γυναικολογία &amp; μεταπτυχιακή εξειδίκευση</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="about about-page about--alt">
-      <div class="container about-grid">
-        <div class="about-media reveal">
-          <img src="${r("assets/dr-vougiouka.svg")}" alt="Μαρία Βουγιούκα, Μαιευτήρας Γυναικολόγος" width="984" height="1050" />
-          <div class="about-badge"><span class="about-badge-num">Γυν.</span><span class="about-badge-label">Μαιευτήρας<br />Γυναικολόγος</span></div>
-        </div>
-        <div class="about-copy">
-          <p class="eyebrow reveal">Η Ιατρός</p>
-          <h2 class="section-title reveal">Μαρία Βουγιούκα</h2>
-          <p class="about-role reveal">Μαιευτήρας – Γυναικολόγος</p>
-          <p class="reveal">Η Μαρία Βουγιούκα είναι Μαιευτήρας – Γυναικολόγος και συνεργάζεται στο ιατρείο της Εγνατίας 74, καλύπτοντας όλο το φάσμα της γυναικολογικής και μαιευτικής φροντίδας.</p>
-          <p class="reveal">Η παρουσία δύο ιατρών στο ίδιο ιατρείο σημαίνει πρακτικά μεγαλύτερη διαθεσιμότητα ραντεβού, συνέχεια στην παρακολούθηση και τη δυνατότητα κάθε γυναίκα να επιλέξει τον ιατρό με τον οποίο νιώθει πιο άνετα — ιδίως στον τακτικό προληπτικό έλεγχο και στην παρακολούθηση της εγκυμοσύνης.</p>
-          <p class="reveal">Τα περιστατικά συζητούνται από κοινού, ώστε το θεραπευτικό πλάνο να προκύπτει από τη σύνθεση δύο κλινικών ματιών.</p>
-          <a href="#cv-maria-vougiouka" class="btn btn-ghost reveal">Αναλυτικό βιογραφικό →</a>
+          <div class="cred reveal"><span class="cred-k">Μεταπτυχιακή εξειδίκευση</span><span class="cred-v">Προκαρκινικές παθήσεις &amp; ενδοσκοπική γυναικολογία</span></div>
         </div>
       </div>
     </section>
@@ -593,7 +583,7 @@ function pageAbout() {
         <p class="eyebrow">Η Φιλοσοφία μας</p>
         <span class="philosophy-mark" aria-hidden="true">&ldquo;</span>
         <blockquote>Η ιατρική δεν είναι μόνο διάγνωση και θεραπεία — είναι και <em>χρόνος</em>. Χρόνος να ακούσεις, να εξηγήσεις και να αποφασίσεις μαζί με την ασθενή.</blockquote>
-        <cite class="philosophy-cite">Δρ. Μενέλαος Λαμπρόπουλος · Μαιευτήρας – Χειρουργός Γυναικολόγος</cite>
+        <cite class="philosophy-cite">Specialized &amp; Personalized Medical Care</cite>
       </div>
     </section>
   </main>` +
@@ -817,7 +807,7 @@ function pageArea(a) {
   ];
   const localFaq = [
     [`Πού βρίσκεται το ιατρείο;`, `Το ιατρείο βρίσκεται στην ${BIZ.street}, ${BIZ.city}, Τ.Κ. ${BIZ.postal}, με εύκολη πρόσβαση από ${a.name}.`],
-    [`Πώς κλείνω ραντεβού;`, `Καλέστε στο ${BIZ.phoneDisplay} ή στο ${BIZ.mobileDisplay}, ή στείλτε email στο ${BIZ.email}. Το ιατρείο λειτουργεί ${BIZ.hours}, με ραντεβού διάρκειας ${BIZ.slot}.`],
+    [`Πώς κλείνω ραντεβού;`, `Καλέστε στο ${BIZ.phoneDisplay} — στη γραμματεία του ιατρείου θα σας εξυπηρετήσει η ${BIZ.secretary}. Μπορείτε επίσης να καλέσετε απευθείας στο ${BIZ.mobileDisplay} (${BIZ.doctor}) ή στο ${BIZ.mobile2Display} (${BIZ.doctor2}), ή να στείλετε email στο ${BIZ.email} και στο ${BIZ.email2}. Το ιατρείο λειτουργεί ${BIZ.hours}, με ραντεβού διάρκειας ${BIZ.slot}.`],
     [`Ποιες υπηρεσίες προσφέρετε;`, `Καλύπτουμε όλο το φάσμα: τακτικό γυναικολογικό έλεγχο και Test Pap, κολποσκόπηση & HPV, παρακολούθηση εγκυμοσύνης, υπερηχογραφήματα, λαπαροσκοπική χειρουργική, υστεροσκόπηση, υπογονιμότητα, εμμηνόπαυση και αντισύλληψη.`],
   ];
   const ld = [
@@ -1037,10 +1027,10 @@ function contactSection({ id = "contact", titleTag = "h2", title, note, extraCla
           <ul class="contact-list">
             <li class="reveal"><span class="contact-label">Ωράριο</span><span class="contact-value">${esc(BIZ.hoursShort)}<br /><em>κατόπιν ραντεβού · κλειστά Σάββατο &amp; Κυριακή</em></span></li>
             <li class="reveal"><span class="contact-label">Διεύθυνση</span><span class="contact-value">${esc(BIZ.street)}<br />${esc(BIZ.city)}, Τ.Κ. ${esc(BIZ.postal)}</span></li>
-            <li class="reveal"><span class="contact-label">Τηλέφωνο</span><span class="contact-value"><a href="tel:${BIZ.phoneIntl}">${esc(BIZ.phoneDisplay)}</a></span></li>
-            <li class="reveal"><span class="contact-label">Κινητό</span><span class="contact-value"><a href="tel:${BIZ.mobileIntl}">${esc(BIZ.mobileDisplay)}</a></span></li>
-            <li class="reveal"><span class="contact-label">Email</span><span class="contact-value"><a href="mailto:${BIZ.email}">${esc(BIZ.email)}</a></span></li>
-            <li class="reveal"><span class="contact-label">Ιατροί</span><span class="contact-value">${esc(BIZ.doctorFull)}<br />${esc(BIZ.doctor2)}, ${esc(BIZ.role2)}</span></li>${socialRow}
+            <li class="reveal"><span class="contact-label">Τηλέφωνο ιατρείου</span><span class="contact-value"><a href="tel:${BIZ.phoneIntl}">${esc(BIZ.phoneDisplay)}</a></span></li>
+            <li class="reveal"><span class="contact-label">Γραμματεία</span><span class="contact-value">${esc(BIZ.secretary)} — <a href="tel:${BIZ.phoneIntl}">${esc(BIZ.phoneDisplay)}</a></span></li>
+            <li class="reveal"><span class="contact-label">${esc(BIZ.doctor)}</span><span class="contact-value"><a href="tel:${BIZ.mobileIntl}">${esc(BIZ.mobileDisplay)}</a><br /><a href="mailto:${BIZ.email}">${esc(BIZ.email)}</a></span></li>
+            <li class="reveal"><span class="contact-label">${esc(BIZ.doctor2)}</span><span class="contact-value"><a href="tel:${BIZ.mobile2Intl}">${esc(BIZ.mobile2Display)}</a><br /><a href="mailto:${BIZ.email2}">${esc(BIZ.email2)}</a></span></li>${socialRow}
           </ul>
           <div class="contact-actions reveal">
             <a href="tel:${BIZ.phoneIntl}" class="btn btn-primary">Καλέστε μας</a>
@@ -1067,7 +1057,7 @@ function pageContact() {
   return head({
     depth,
     title: "Επικοινωνία & Ραντεβού | Γυναικολόγος Θεσσαλονίκη — Εγνατίας 74",
-    desc: `Επικοινωνήστε με το ιατρείο. ${BIZ.street}, ${BIZ.city} ${BIZ.postal}. Τηλ. ${BIZ.phoneDisplay} & ${BIZ.mobileDisplay}, ${BIZ.email}. ${BIZ.hours}.`,
+    desc: `Επικοινωνήστε με το ιατρείο. ${BIZ.street}, ${BIZ.city} ${BIZ.postal}. Τηλ. ${BIZ.phoneDisplay}, κινητά ${BIZ.mobileDisplay} & ${BIZ.mobile2Display}, email ${BIZ.email} & ${BIZ.email2}. ${BIZ.hours}.`,
     canonical: "epikoinonia.html",
     keywords: "επικοινωνία γυναικολόγος Θεσσαλονίκη, ραντεβού γυναικολόγος, τηλέφωνο γυναικολογικό ιατρείο Εγνατίας",
     ld,
