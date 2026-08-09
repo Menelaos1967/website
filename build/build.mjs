@@ -422,6 +422,15 @@ function pageHome() {
         </div>
       </div>
     </section>
+` +
+    contactSection({
+      id: "epikoinonia",
+      titleTag: "h2",
+      extraClass: "contact--home",
+      title: "Πού θα μας βρείτε",
+      note: `Το ιατρείο βρίσκεται στην <strong>${esc(BIZ.street)}</strong>, στο κέντρο της Θεσσαλονίκης, και λειτουργεί <strong>κατόπιν ραντεβού</strong> με διαθεσιμότητα ανά <strong>${esc(BIZ.slot)}</strong>.`,
+    }) +
+    `
   </main>` +
     ctaBand(depth) +
     footer(depth);
@@ -1012,38 +1021,19 @@ function pagePost(p) {
     footer(depth);
 }
 
-// ====================================================================
-//  PAGE: CONTACT
-// ====================================================================
-function pageContact() {
-  const depth = 0;
-  const trail = [
-    { name: "Αρχική", rel: "index.html", path: "index.html" },
-    { name: "Επικοινωνία", rel: "epikoinonia.html", path: "epikoinonia.html" },
-  ];
-  const ld = [breadcrumbLD(depth, trail), { "@context": "https://schema.org", ...clinicLD }];
+// ---- contact block (στοιχεία + χάρτης) — κοινό σε αρχική & επικοινωνία ----
+function contactSection({ id = "contact", titleTag = "h2", title, note, extraClass = "" }) {
   const socialRow = SOCIALS.length
     ? `
             <li class="reveal"><span class="contact-label">Social</span><span class="contact-value">${SOCIALS.map(([n, u]) => `<a href="${u}" target="_blank" rel="noopener noreferrer">${esc(n)}</a>`).join(" · ")}</span></li>`
     : "";
-  return head({
-    depth,
-    title: "Επικοινωνία & Ραντεβού | Γυναικολόγος Θεσσαλονίκη — Εγνατίας 74",
-    desc: `Επικοινωνήστε με το ιατρείο. ${BIZ.street}, ${BIZ.city} ${BIZ.postal}. Τηλ. ${BIZ.phoneDisplay} & ${BIZ.mobileDisplay}, ${BIZ.email}. ${BIZ.hours}.`,
-    canonical: "epikoinonia.html",
-    keywords: "επικοινωνία γυναικολόγος Θεσσαλονίκη, ραντεβού γυναικολόγος, τηλέφωνο γυναικολογικό ιατρείο Εγνατίας",
-    ld,
-  }) +
-    header(depth, "contact") +
-    crumbs(depth, trail) +
-    `
-  <main id="main">
-    <section class="contact" id="contact">
+  return `
+    <section class="contact${extraClass ? " " + extraClass : ""}" id="${id}">
       <div class="container contact-grid">
         <div class="contact-copy">
           <p class="eyebrow reveal">Επικοινωνία</p>
-          <h1 class="section-title reveal">Κλείστε το ραντεβού σας</h1>
-          <p class="contact-note reveal">Το ιατρείο λειτουργεί <strong>κατόπιν ραντεβού</strong>, με διαθεσιμότητα ανά <strong>${esc(BIZ.slot)}</strong>. Επικοινωνήστε τηλεφωνικά ή με email για να κανονίσουμε την επίσκεψή σας.</p>
+          <${titleTag} class="section-title reveal">${esc(title)}</${titleTag}>
+          <p class="contact-note reveal">${note}</p>
           <ul class="contact-list">
             <li class="reveal"><span class="contact-label">Ωράριο</span><span class="contact-value">${esc(BIZ.hoursShort)}<br /><em>κατόπιν ραντεβού · κλειστά Σάββατο &amp; Κυριακή</em></span></li>
             <li class="reveal"><span class="contact-label">Διεύθυνση</span><span class="contact-value">${esc(BIZ.street)}<br />${esc(BIZ.city)}, Τ.Κ. ${esc(BIZ.postal)}</span></li>
@@ -1061,7 +1051,38 @@ function pageContact() {
           <iframe title="Χάρτης — ${attr(BIZ.street + ", " + BIZ.city)}" src="https://www.google.com/maps?q=${encodeURIComponent(BIZ.street + ", " + BIZ.city + " " + BIZ.postal)}&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
         </div>
       </div>
-    </section>
+    </section>`;
+}
+
+// ====================================================================
+//  PAGE: CONTACT
+// ====================================================================
+function pageContact() {
+  const depth = 0;
+  const trail = [
+    { name: "Αρχική", rel: "index.html", path: "index.html" },
+    { name: "Επικοινωνία", rel: "epikoinonia.html", path: "epikoinonia.html" },
+  ];
+  const ld = [breadcrumbLD(depth, trail), { "@context": "https://schema.org", ...clinicLD }];
+  return head({
+    depth,
+    title: "Επικοινωνία & Ραντεβού | Γυναικολόγος Θεσσαλονίκη — Εγνατίας 74",
+    desc: `Επικοινωνήστε με το ιατρείο. ${BIZ.street}, ${BIZ.city} ${BIZ.postal}. Τηλ. ${BIZ.phoneDisplay} & ${BIZ.mobileDisplay}, ${BIZ.email}. ${BIZ.hours}.`,
+    canonical: "epikoinonia.html",
+    keywords: "επικοινωνία γυναικολόγος Θεσσαλονίκη, ραντεβού γυναικολόγος, τηλέφωνο γυναικολογικό ιατρείο Εγνατίας",
+    ld,
+  }) +
+    header(depth, "contact") +
+    crumbs(depth, trail) +
+    `
+  <main id="main">` +
+    contactSection({
+      id: "contact",
+      titleTag: "h1",
+      title: "Κλείστε το ραντεβού σας",
+      note: `Το ιατρείο λειτουργεί <strong>κατόπιν ραντεβού</strong>, με διαθεσιμότητα ανά <strong>${esc(BIZ.slot)}</strong>. Επικοινωνήστε τηλεφωνικά ή με email για να κανονίσουμε την επίσκεψή σας.`,
+    }) +
+    `
   </main>` +
     footer(depth);
 }
