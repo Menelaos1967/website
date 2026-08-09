@@ -337,7 +337,6 @@ function pageHome() {
           <a href="${r("ypiresies/index.html")}" class="btn btn-ghost">Οι Υπηρεσίες μας</a>
         </div>
       </div>
-      <div class="hero-scroll" aria-hidden="true"><span></span></div>
     </section>
 
     <div class="strip" aria-hidden="true">

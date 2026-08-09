@@ -269,28 +269,6 @@ a { color: inherit; text-decoration: none; }
 }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 0.9rem; }
 
-.hero-scroll {
-  position: absolute;
-  left: 50%; bottom: 30px;
-  transform: translateX(-50%);
-  width: 26px; height: 42px;
-  border: 1px solid var(--taupe);
-  border-radius: 100px;
-}
-.hero-scroll span {
-  position: absolute;
-  left: 50%; top: 9px;
-  width: 4px; height: 8px;
-  margin-left: -2px;
-  border-radius: 4px;
-  background: var(--taupe);
-  animation: scroll 1.8s var(--ease) infinite;
-}
-@keyframes scroll {
-  0% { opacity: 0; transform: translateY(0); }
-  35% { opacity: 1; }
-  70%, 100% { opacity: 0; transform: translateY(14px); }
-}
 
 /* ============================================================
    Marquee strip
