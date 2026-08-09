@@ -10,6 +10,7 @@ M.D., MSc**, Μαιευτήρα – Χειρουργό Γυναικολόγο �
 ```
 index.html                     Αρχική
 oi-iatroi.html                 Βιογραφικά — Δρ. Λαμπρόπουλος & Μ. Βουγιούκα
+                               (#viografika: αναλυτικά CV + λήψη πλήρων PDF)
 epikoinonia.html               Επικοινωνία + χάρτης
 ypiresies/index.html           Όλες οι υπηρεσίες (hub)
 ypiresies/<υπηρεσία>.html       10 σελίδες υπηρεσιών
@@ -19,6 +20,7 @@ blog/index.html                Blog (hub)
 blog/<άρθρο>.html               6 άρθρα (long-tail keywords)
 sitemap.xml, robots.txt        Τεχνικό SEO
 assets/                        logo.svg, dr-lampropoulos.svg, dr-vougiouka.svg
+                               viografiko-*.pdf (πλήρη βιογραφικά προς λήψη)
 styles.css, main.js            Κοινό στυλ & συμπεριφορά
 build/                         Γεννήτρια (data.mjs + build.mjs)
 ```

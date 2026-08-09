@@ -6,7 +6,7 @@
 import { writeFileSync, mkdirSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
-import { BASE, BIZ, SERVICES, AREAS, POSTS } from "./data.mjs";
+import { BASE, BIZ, CVS, SERVICES, AREAS, POSTS } from "./data.mjs";
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const out = (p, html) => {
@@ -151,7 +151,7 @@ function header(depth, active = "") {
       <ul class="nav-links">
         <li><a href="${r("index.html")}"${on("home")}>Αρχική</a></li>
         <li><a href="${r("oi-iatroi.html")}"${on("about")}>Οι Ιατροί</a></li>
-        <li><a href="${r("index.html#clinic-space")}">Ο χώρος μας</a></li>
+        <li><a href="${r("oi-iatroi.html#viografika")}">Βιογραφικά</a></li>
         <li class="has-sub">
           <a href="${r("ypiresies/index.html")}"${on("services")}>Υπηρεσίες</a>
           <ul class="sub">
@@ -235,7 +235,7 @@ function footer(depth) {
         <nav aria-label="Πλοήγηση" class="footer-links">
           <a href="${r("index.html")}">Αρχική</a>
           <a href="${r("oi-iatroi.html")}">Οι Ιατροί</a>
-          <a href="${r("index.html#clinic-space")}">Ο χώρος μας</a>
+          <a href="${r("oi-iatroi.html#viografika")}">Βιογραφικά</a>
           <a href="${r("ypiresies/index.html")}">Όλες οι Υπηρεσίες</a>
           <a href="${r("perioches/index.html")}">Περιοχές που Εξυπηρετούμε</a>
           <a href="${r("blog/index.html")}">Blog</a>
@@ -281,16 +281,6 @@ function pageHome() {
         </a>`
   ).join("");
 
-  const spacePhotos = [
-    ["assets/clinic-space-1.jpg", "Εξεταστήριο γυναικολογικού ιατρείου", 1200, 1600],
-    ["assets/clinic-space-2.jpg", "Χώρος υποδοχής του ιατρείου", 1200, 1600],
-    ["assets/clinic-space-3.jpg", "Χώρος αναμονής του ιατρείου", 1200, 1600],
-    ["assets/clinic-space-4.jpg", "Καθιστικό και διακόσμηση στον χώρο αναμονής", 1600, 1200],
-  ].map(([src, alt, width, height]) => `
-          <figure class="space-photo reveal">
-            <img src="${r(src)}" alt="${attr(alt)}" width="${width}" height="${height}" loading="lazy" decoding="async" />
-          </figure>`).join("");
-
   const ld = [
     { "@context": "https://schema.org", ...clinicLD },
     {
@@ -301,6 +291,26 @@ function pageHome() {
       inLanguage: "el",
     },
     breadcrumbLD(depth, [{ name: "Αρχική", path: "index.html" }]),
+    {
+      "@context": "https://schema.org",
+      "@type": "Physician",
+      name: BIZ.doctorFull,
+      jobTitle: BIZ.role,
+      medicalSpecialty: "ObstetricsAndGynecology",
+      image: abs("assets/dr-lampropoulos.svg"),
+      url: abs("oi-iatroi.html#cv-menelaos-lampropoulos"),
+      worksFor: { "@id": `${BASE}/#clinic` },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Physician",
+      name: BIZ.doctor2,
+      jobTitle: BIZ.role2,
+      medicalSpecialty: "ObstetricsAndGynecology",
+      image: abs("assets/dr-vougiouka.svg"),
+      url: abs("oi-iatroi.html#cv-maria-vougiouka"),
+      worksFor: { "@id": `${BASE}/#clinic` },
+    },
   ];
 
   return head({
@@ -355,8 +365,28 @@ function pageHome() {
           <h2 class="section-title reveal">Δρ. Μενέλαος Λαμπρόπουλος</h2>
           <p class="about-role reveal">M.D., MSc · Μαιευτήρας – Χειρουργός Γυναικολόγος</p>
           <p class="reveal">Συντονιστής Διευθυντής στο Νοσοκομείο «Ο Άγιος Δημήτριος» Θεσσαλονίκης, Πρόεδρος του Χειρουργικού Τομέα και Πρόεδρος του Επιστημονικού Συμβουλίου — με μακρά διαδρομή στη μαιευτική και τη γυναικολογική χειρουργική.</p>
-          <p class="reveal">Στο ιατρείο της Εγνατίας 74 τον πλαισιώνει η γυναικολόγος <strong>Μαρία Βουγιούκα</strong>, ώστε κάθε γυναίκα να έχει διπλή ματιά και συνεχή παρακολούθηση, σε όλα τα στάδια της ζωής της.</p>
-          <a href="${r("oi-iatroi.html")}" class="btn btn-ghost reveal">Τα πλήρη βιογραφικά →</a>
+          <p class="reveal">Μεταπτυχιακή εξειδίκευση στις προκαρκινικές παθήσεις, μετεκπαίδευση στην ενδοσκοπική γυναικολογία και εκπαίδευση στη λαπαροσκοπική χειρουργική στο IRCAD της Γαλλίας.</p>
+          <a href="${r("oi-iatroi.html#cv-menelaos-lampropoulos")}" class="btn btn-ghost reveal">Αναλυτικό βιογραφικό →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="about about--alt" id="about-vougiouka">
+      <div class="container about-grid">
+        <div class="about-media reveal">
+          <img src="${r("assets/dr-vougiouka.svg")}" alt="Μαρία Βουγιούκα, Μαιευτήρας Γυναικολόγος — Θεσσαλονίκη" width="984" height="1050" />
+          <div class="about-badge">
+            <span class="about-badge-num">Γυν.</span>
+            <span class="about-badge-label">Μαιευτήρας<br />Γυναικολόγος</span>
+          </div>
+        </div>
+        <div class="about-copy">
+          <p class="eyebrow reveal">Η Ιατρός</p>
+          <h2 class="section-title reveal">Μαρία Βουγιούκα</h2>
+          <p class="about-role reveal">Μαιευτήρας – Γυναικολόγος</p>
+          <p class="reveal">Με πορεία σε πανεπιστημιακές και νοσοκομειακές κλινικές της Θεσσαλονίκης, της Βέροιας και της Ρόδου, ασκεί την ειδικότητά της στο ιατρείο της Εγνατίας 74 από το 2008.</p>
+          <p class="reveal">Η παρουσία δύο ιατρών σημαίνει διπλή κλινική ματιά, μεγαλύτερη διαθεσιμότητα ραντεβού και τη δυνατότητα κάθε γυναίκα να επιλέξει τον ιατρό με τον οποίο νιώθει πιο άνετα.</p>
+          <a href="${r("oi-iatroi.html#cv-maria-vougiouka")}" class="btn btn-ghost reveal">Αναλυτικό βιογραφικό →</a>
         </div>
       </div>
     </section>
@@ -381,18 +411,6 @@ function pageHome() {
       </div>
     </section>
 
-    <section class="clinic-space" id="clinic-space">
-      <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">Ο χώρος μας</p>
-          <h2 class="section-title">Ένας ήρεμος και φροντισμένος χώρος για κάθε επίσκεψη</h2>
-        </div>
-        <div class="space-grid">
-${spacePhotos}
-        </div>
-      </div>
-    </section>
-
     <section class="areas-teaser">
       <div class="container">
         <div class="section-head reveal">
@@ -407,6 +425,54 @@ ${spacePhotos}
   </main>` +
     ctaBand(depth) +
     footer(depth);
+}
+
+// ---- CV block (structured summary + full PDF) ------------------------
+function cvBlock(depth, cv) {
+  const r = (p) => rel(depth, p);
+  const groups = cv.groups
+    .map(
+      (g) => `
+          <div class="cv-group reveal">
+            <h4 class="cv-group-title">${esc(g.title)}</h4>
+            <ul class="cv-list">
+              ${g.items
+                .map(
+                  ([when, text]) =>
+                    `<li>${when ? `<span class="cv-when">${esc(when)}</span>` : `<span class="cv-when cv-when--empty" aria-hidden="true">•</span>`}<span class="cv-what">${esc(text)}</span></li>`
+                )
+                .join("\n              ")}
+            </ul>
+          </div>`
+    )
+    .join("");
+  return `
+      <article class="cv-card" id="cv-${cv.id}">
+        <header class="cv-head reveal">
+          <div>
+            <h3 class="cv-name">${esc(cv.name)}</h3>
+            <p class="cv-role">${esc(cv.role)}</p>
+            <p class="cv-langs">Γλώσσες: ${esc(cv.languages.join(" · "))}</p>
+          </div>
+          <a class="btn btn-primary cv-dl" href="${r(cv.pdf)}" download="${attr(cv.pdfName)}" type="application/pdf">Πλήρες βιογραφικό (PDF)</a>
+        </header>
+        <div class="cv-groups">${groups}
+        </div>
+      </article>`;
+}
+
+function cvSection(depth) {
+  return `
+    <section class="cv-section" id="viografika">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Βιογραφικά</p>
+          <h2 class="section-title">Σπουδές, πορεία &amp; επιστημονικό έργο</h2>
+        </div>
+        <div class="cv-stack">${CVS.map((cv) => cvBlock(depth, cv)).join("\n")}
+        </div>
+      </div>
+    </section>`;
 }
 
 // ====================================================================
@@ -430,6 +496,9 @@ function pageAbout() {
       image: abs("assets/dr-lampropoulos.svg"),
       url: abs("oi-iatroi.html"),
       worksFor: { "@id": `${BASE}/#clinic` },
+      alumniOf: { "@type": "CollegeOrUniversity", name: "Ιατρική Σχολή Αριστοτελείου Πανεπιστημίου Θεσσαλονίκης" },
+      knowsLanguage: CVS[0].languages,
+      subjectOf: { "@type": "DigitalDocument", name: "Βιογραφικό σημείωμα", url: abs(CVS[0].pdf), encodingFormat: "application/pdf" },
       ...(SOCIALS.length ? { sameAs: SOCIALS.map(([, u]) => u) } : {}),
     },
     {
@@ -441,6 +510,9 @@ function pageAbout() {
       image: abs("assets/dr-vougiouka.svg"),
       url: abs("oi-iatroi.html"),
       worksFor: { "@id": `${BASE}/#clinic` },
+      alumniOf: { "@type": "CollegeOrUniversity", name: "Ιατρική Σχολή Αριστοτελείου Πανεπιστημίου Θεσσαλονίκης" },
+      knowsLanguage: CVS[1].languages,
+      subjectOf: { "@type": "DigitalDocument", name: "Βιογραφικό σημείωμα", url: abs(CVS[1].pdf), encodingFormat: "application/pdf" },
     },
   ];
   return head({
@@ -471,6 +543,7 @@ function pageAbout() {
           <p class="reveal">Υπηρετεί ως <strong>Συντονιστής Διευθυντής</strong> στο Νοσοκομείο «Ο Άγιος Δημήτριος» Θεσσαλονίκης, θέση που συνδυάζει την καθημερινή κλινική πράξη με την οργάνωση και εποπτεία της λειτουργίας της κλινικής.</p>
           <p class="reveal">Παράλληλα διατελεί <strong>Πρόεδρος του Χειρουργικού Τομέα</strong> και <strong>Πρόεδρος του Επιστημονικού Συμβουλίου</strong> του νοσοκομείου — ρόλοι που αντανακλούν τόσο τη χειρουργική του εμπειρία όσο και τη διαρκή ενασχόλησή του με την επιστημονική τεκμηρίωση και την εκπαίδευση.</p>
           <p class="reveal">Στο ιατρείο του, στην Εγνατίας 74, μεταφέρει την ίδια νοσοκομειακή αυστηρότητα σε ένα πλαίσιο προσωπικό και ήρεμο: ραντεβού διάρκειας ${esc(BIZ.slot)}, αναλυτική εξήγηση κάθε εύρηματος και θεραπευτικό πλάνο που αποφασίζεται από κοινού.</p>
+          <a href="#cv-menelaos-lampropoulos" class="btn btn-ghost reveal">Αναλυτικό βιογραφικό →</a>
         </div>
       </div>
     </section>
@@ -499,10 +572,13 @@ function pageAbout() {
           <p class="reveal">Η Μαρία Βουγιούκα είναι Μαιευτήρας – Γυναικολόγος και συνεργάζεται στο ιατρείο της Εγνατίας 74, καλύπτοντας όλο το φάσμα της γυναικολογικής και μαιευτικής φροντίδας.</p>
           <p class="reveal">Η παρουσία δύο ιατρών στο ίδιο ιατρείο σημαίνει πρακτικά μεγαλύτερη διαθεσιμότητα ραντεβού, συνέχεια στην παρακολούθηση και τη δυνατότητα κάθε γυναίκα να επιλέξει τον ιατρό με τον οποίο νιώθει πιο άνετα — ιδίως στον τακτικό προληπτικό έλεγχο και στην παρακολούθηση της εγκυμοσύνης.</p>
           <p class="reveal">Τα περιστατικά συζητούνται από κοινού, ώστε το θεραπευτικό πλάνο να προκύπτει από τη σύνθεση δύο κλινικών ματιών.</p>
+          <a href="#cv-maria-vougiouka" class="btn btn-ghost reveal">Αναλυτικό βιογραφικό →</a>
         </div>
       </div>
     </section>
-
+` +
+    cvSection(depth) +
+    `
     <section class="philosophy">
       <div class="container philosophy-inner reveal">
         <p class="eyebrow">Η Φιλοσοφία μας</p>
