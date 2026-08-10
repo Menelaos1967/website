@@ -331,7 +331,7 @@ function pageHome() {
         <p class="eyebrow reveal">Χειρουργός Μαιευτήρας Γυναικολόγος · Θεσσαλονίκη</p>
         <h1 class="hero-title reveal">Specialized<span class="hero-title-sub">&amp; Personalized Care</span></h1>
         <p class="hero-tagline reveal">Εξατομικευμένη φροντίδα, σε κάθε <em>στάδιο.</em></p>
-        <p class="hero-lead reveal">Δεκαετίες κλινικής και χειρουργικής εμπειρίας, σε ένα ιατρείο που δίνει σε κάθε γυναίκα τον χρόνο που της αναλογεί.</p>
+        <p class="hero-lead reveal">Δεκαετίες κλινικής και χειρουργικής εμπειρίας, σε ένα ιατρείο που δίνει σε κάθε γυναίκα τον χρόνο και τη φροντίδα που της αξίζει.</p>
         <div class="hero-actions reveal">
           <a href="${r("epikoinonia.html")}" class="btn btn-primary">Κλείστε Ραντεβού</a>
           <a href="${r("ypiresies/index.html")}" class="btn btn-ghost">Οι Υπηρεσίες μας</a>
@@ -727,7 +727,6 @@ function pageService(s, idx) {
             <h3>Κλείστε ραντεβού</h3>
             <p>Το ιατρείο λειτουργεί κατόπιν ραντεβού, με διαθεσιμότητα ανά ${esc(BIZ.slot)}.</p>
             <a href="tel:${BIZ.phoneIntl}" class="btn btn-primary btn-block">${esc(BIZ.phoneDisplay)}</a>
-            <a href="tel:${BIZ.mobileIntl}" class="btn btn-ghost btn-block">${esc(BIZ.mobileDisplay)}</a>
             <p class="aside-meta">${esc(BIZ.street)}<br />${esc(BIZ.city)}, ${esc(BIZ.postal)}<br />${esc(BIZ.hoursShort)}</p>
           </div>
           <div class="aside-card reveal">
