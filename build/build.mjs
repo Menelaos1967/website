@@ -38,7 +38,6 @@ const clinicLD = {
   slogan: BIZ.tagline,
   url: BASE + "/",
   telephone: BIZ.phoneIntl,
-  email: BIZ.email,
   image: abs("assets/logo.svg"),
   logo: abs("assets/logo.svg"),
   medicalSpecialty: "ObstetricsAndGynecology",
@@ -189,7 +188,7 @@ function ctaBand(depth) {
       <div>
         <p class="eyebrow">Κλείστε το ραντεβού σας</p>
         <h2 class="cta-title">Η υγεία σας, με χρόνο και προσοχή.</h2>
-        <p class="cta-sub">Κάθε ραντεβού διαρκεί ${esc(BIZ.slot)} — ${esc(BIZ.hoursShort)}.</p>
+        <p class="cta-sub">${esc(BIZ.hoursShort)} — κατόπιν ραντεβού.</p>
       </div>
       <div class="cta-actions">
         <a href="tel:${BIZ.phoneIntl}" class="btn btn-primary">Καλέστε ${esc(BIZ.phoneDisplay)}</a>
@@ -248,9 +247,7 @@ function footer(depth) {
         <nav aria-label="Επικοινωνία" class="footer-links">
           <a href="tel:${BIZ.phoneIntl}">${esc(BIZ.phoneDisplay)}</a>
           <a href="tel:${BIZ.mobileIntl}">Δρ. Μ. Λαμπρόπουλος · ${esc(BIZ.mobileDisplay)}</a>
-          <a href="mailto:${BIZ.email}">${esc(BIZ.email)}</a>
           <a href="tel:${BIZ.mobile2Intl}">Δρ. Μ. Βουγιούκα · ${esc(BIZ.mobile2Display)}</a>
-          <a href="mailto:${BIZ.email2}">${esc(BIZ.email2)}</a>
         </nav>
         <p class="footer-hours">${esc(BIZ.hours)}</p>
       </div>
@@ -356,7 +353,7 @@ function pageHome() {
       <div class="container">
         <div class="section-head reveal">
           <p class="eyebrow">Οι Ιατροί</p>
-          <h2 class="section-title">Δύο ιατροί, μία φροντίδα</h2>
+          <h2 class="section-title">Δύο ιατροί, μία κοινή φιλοσοφία φροντίδας</h2>
         </div>
         <div class="doctors-grid">
           <article class="doc reveal">
@@ -365,8 +362,7 @@ function pageHome() {
             </div>
             <h3 class="doc-name">Δρ. Μενέλαος Λαμπρόπουλος</h3>
             <p class="doc-role">Χειρουργός Μαιευτήρας Γυναικολόγος</p>
-            <p>Συντονιστής Διευθυντής στο Νοσοκομείο «Ο Άγιος Δημήτριος» Θεσσαλονίκης, Πρόεδρος του Χειρουργικού Τομέα και Πρόεδρος του Επιστημονικού Συμβουλίου — με μακρά διαδρομή στη μαιευτική και τη γυναικολογική χειρουργική.</p>
-            <p>Μεταπτυχιακή εξειδίκευση στις προκαρκινικές παθήσεις, μετεκπαίδευση στην ενδοσκοπική γυναικολογία και εκπαίδευση στη λαπαροσκοπική χειρουργική στο IRCAD της Γαλλίας.</p>
+            <p>Με πολυετή κλινική και χειρουργική εμπειρία, ο Δρ. Μενέλαος Λαμπρόπουλος είναι Συντονιστής Διευθυντής Μαιευτικής – Γυναικολογίας στο Νοσοκομείο «Ο Άγιος Δημήτριος» Θεσσαλονίκης, με ιδιαίτερη ενασχόληση με την ενδοσκοπική γυναικολογία, την κολποσκόπηση και τις προκαρκινικές παθήσεις.</p>
             <a href="${r("oi-iatroi.html#cv-menelaos-lampropoulos")}" class="btn btn-ghost">Αναλυτικό βιογραφικό →</a>
           </article>
           <article class="doc reveal">
@@ -375,8 +371,7 @@ function pageHome() {
             </div>
             <h3 class="doc-name">Δρ. Μαρία Βουγιούκα</h3>
             <p class="doc-role">Χειρουργός Μαιευτήρας Γυναικολόγος</p>
-            <p>Με πορεία σε πανεπιστημιακές και νοσοκομειακές κλινικές της Θεσσαλονίκης, της Βέροιας και της Ρόδου, ασκεί την ειδικότητά της στο ιατρείο της Εγνατίας 74 από το 2008.</p>
-            <p>Η παρουσία δύο ιατρών σημαίνει διπλή κλινική ματιά, μεγαλύτερη διαθεσιμότητα ραντεβού και τη δυνατότητα κάθε γυναίκα να επιλέξει τον ιατρό με τον οποίο νιώθει πιο άνετα.</p>
+            <p>Με πολυετή κλινική εμπειρία στη μαιευτική και τη γυναικολογία, η Δρ. Μαρία Βουγιούκα ασκεί την ειδικότητά της στο ιατρείο της.</p>
             <a href="${r("oi-iatroi.html#cv-maria-vougiouka")}" class="btn btn-ghost">Αναλυτικό βιογραφικό →</a>
           </article>
         </div>
@@ -420,7 +415,7 @@ function pageHome() {
       titleTag: "h2",
       extraClass: "contact--home",
       title: "Πού θα μας βρείτε",
-      note: `Το ιατρείο βρίσκεται στην <strong>${esc(BIZ.street)}</strong>, στο κέντρο της Θεσσαλονίκης, και λειτουργεί <strong>κατόπιν ραντεβού</strong> με διαθεσιμότητα ανά <strong>${esc(BIZ.slot)}</strong>.`,
+      note: `Το ιατρείο βρίσκεται στην <strong>${esc(BIZ.street)}</strong>, στο κέντρο της Θεσσαλονίκης, και λειτουργεί <strong>κατόπιν ραντεβού</strong>.`,
     }) +
     `
   </main>` +
@@ -537,6 +532,10 @@ function pageAbout() {
 
     <section class="doctors doctors--page">
       <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Οι Ιατροί</p>
+          <h2 class="section-title">Δύο ιατροί, μία κοινή φιλοσοφία φροντίδας</h2>
+        </div>
         <div class="doctors-grid">
           <article class="doc reveal">
             <div class="doc-media">
@@ -544,9 +543,8 @@ function pageAbout() {
             </div>
             <h2 class="doc-name">Δρ. Μενέλαος Λαμπρόπουλος</h2>
             <p class="doc-role">Χειρουργός Μαιευτήρας Γυναικολόγος</p>
-            <p>Ο Δρ. Μενέλαος Λαμπρόπουλος είναι Χειρουργός Μαιευτήρας Γυναικολόγος με πολυετή κλινική και χειρουργική εμπειρία στη Θεσσαλονίκη, τόσο στον δημόσιο όσο και στον ιδιωτικό τομέα.</p>
-            <p>Υπηρετεί ως <strong>Συντονιστής Διευθυντής</strong> στο Νοσοκομείο «Ο Άγιος Δημήτριος» Θεσσαλονίκης, θέση που συνδυάζει την καθημερινή κλινική πράξη με την οργάνωση και εποπτεία της λειτουργίας της κλινικής. Παράλληλα διατελεί <strong>Πρόεδρος του Χειρουργικού Τομέα</strong> και <strong>Πρόεδρος του Επιστημονικού Συμβουλίου</strong> του νοσοκομείου.</p>
-            <p>Στο ιατρείο του, στην Εγνατίας 74, μεταφέρει την ίδια νοσοκομειακή αυστηρότητα σε ένα πλαίσιο προσωπικό και ήρεμο: ραντεβού διάρκειας ${esc(BIZ.slot)}, αναλυτική εξήγηση κάθε ευρήματος και θεραπευτικό πλάνο που αποφασίζεται από κοινού.</p>
+            <p>Ο Δρ. Μενέλαος Λαμπρόπουλος είναι Χειρουργός Μαιευτήρας Γυναικολόγος με πολυετή κλινική και χειρουργική εμπειρία, με ιδιαίτερη ενασχόληση με την ενδοσκοπική γυναικολογία, την κολποσκόπηση και τις προκαρκινικές και ογκολογικές παθήσεις της γυναικολογίας.</p>
+            <p>Υπηρετεί ως <strong>Συντονιστής Διευθυντής</strong> στη Μαιευτική και Γυναικολογική κλινική του Νοσοκομείου «Ο Άγιος Δημήτριος» Θεσσαλονίκης και κατέχει θέσεις επιστημονικής και διοικητικής ευθύνης ως <strong>Πρόεδρος του Χειρουργικού Τομέα</strong> και <strong>Πρόεδρος του Επιστημονικού Συμβουλίου</strong> του νοσοκομείου.</p>
             <a href="#cv-menelaos-lampropoulos" class="btn btn-ghost">Αναλυτικό βιογραφικό →</a>
           </article>
           <article class="doc reveal">
@@ -555,22 +553,11 @@ function pageAbout() {
             </div>
             <h2 class="doc-name">Δρ. Μαρία Βουγιούκα</h2>
             <p class="doc-role">Χειρουργός Μαιευτήρας Γυναικολόγος</p>
-            <p>Η Δρ. Μαρία Βουγιούκα είναι Χειρουργός Μαιευτήρας Γυναικολόγος και συνεργάζεται στο ιατρείο της Εγνατίας 74, καλύπτοντας όλο το φάσμα της γυναικολογικής και μαιευτικής φροντίδας.</p>
-            <p>Με πορεία σε πανεπιστημιακές και νοσοκομειακές κλινικές της Θεσσαλονίκης, της Βέροιας και της Ρόδου, ασκεί την ειδικότητά της στο ιατρείο από το 2008 — ιδίως στον τακτικό προληπτικό έλεγχο και στην παρακολούθηση της εγκυμοσύνης.</p>
-            <p>Τα περιστατικά συζητούνται από κοινού, ώστε το θεραπευτικό πλάνο να προκύπτει από τη σύνθεση δύο κλινικών ματιών.</p>
+            <p>Η Δρ. Μαρία Βουγιούκα είναι Χειρουργός Μαιευτήρας Γυναικολόγος με πολυετή κλινική και χειρουργική εμπειρία στη μαιευτική και τη γυναικολογία και μακρά παρουσία στην ιδιωτική ιατρική πράξη στη Θεσσαλονίκη.</p>
+            <p>Η εκπαίδευση και η κλινική της εμπειρία περιλαμβάνουν πανεπιστημιακές και νοσοκομειακές κλινικές. Είναι <strong>Ειδικός Κολποσκόπος</strong> και πιστοποιημένη στην υπερηχογραφία, με συνεχή επιστημονική επιμόρφωση και παρουσία σε επιστημονικά συνέδρια και δημοσιεύσεις.</p>
+            <p>Στην καθημερινή κλινική πράξη δίνει έμφαση στην πρόληψη και τον τακτικό προληπτικό έλεγχο.</p>
             <a href="#cv-maria-vougiouka" class="btn btn-ghost">Αναλυτικό βιογραφικό →</a>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="creds">
-      <div class="container">
-        <div class="creds-grid">
-          <div class="cred reveal"><span class="cred-k">Συντονιστής Διευθυντής</span><span class="cred-v">Νοσοκομείο «Ο Άγιος Δημήτριος», Θεσσαλονίκη</span></div>
-          <div class="cred reveal"><span class="cred-k">Πρόεδρος Χειρουργικού Τομέα</span><span class="cred-v">Εποπτεία &amp; συντονισμός χειρουργικών κλινικών</span></div>
-          <div class="cred reveal"><span class="cred-k">Πρόεδρος Επιστημονικού Συμβουλίου</span><span class="cred-v">Επιστημονική τεκμηρίωση &amp; εκπαίδευση</span></div>
-          <div class="cred reveal"><span class="cred-k">Μεταπτυχιακή εξειδίκευση</span><span class="cred-v">Προκαρκινικές παθήσεις &amp; ενδοσκοπική γυναικολογία</span></div>
         </div>
       </div>
     </section>
@@ -639,7 +626,7 @@ function pageServicesHub() {
       <div class="container">
         <p class="eyebrow reveal">Υπηρεσίες</p>
         <h1 class="page-title reveal">Γυναικολογική &amp; μαιευτική φροντίδα, σε όλο το φάσμα</h1>
-        <p class="page-lead reveal">Από τον ετήσιο προληπτικό έλεγχο και την εγκυμοσύνη, μέχρι την ελάχιστα επεμβατική χειρουργική και την εμμηνόπαυση — με ραντεβού ${esc(BIZ.slot)} που δίνουν χώρο για ουσιαστική συζήτηση.</p>
+        <p class="page-lead reveal">Από τον ετήσιο προληπτικό έλεγχο και την εγκυμοσύνη, μέχρι την ελάχιστα επεμβατική χειρουργική και την εμμηνόπαυση — με ραντεβού που δίνουν χώρο για ουσιαστική συζήτηση.</p>
       </div>
     </section>
     <section class="services services--hub">
@@ -725,7 +712,7 @@ function pageService(s, idx) {
         <aside class="svc-aside">
           <div class="aside-card reveal">
             <h3>Κλείστε ραντεβού</h3>
-            <p>Το ιατρείο λειτουργεί κατόπιν ραντεβού, με διαθεσιμότητα ανά ${esc(BIZ.slot)}.</p>
+            <p>Το ιατρείο λειτουργεί κατόπιν ραντεβού.</p>
             <a href="tel:${BIZ.phoneIntl}" class="btn btn-primary btn-block">${esc(BIZ.phoneDisplay)}</a>
             <p class="aside-meta">${esc(BIZ.street)}<br />${esc(BIZ.city)}, ${esc(BIZ.postal)}<br />${esc(BIZ.hoursShort)}</p>
           </div>
@@ -805,7 +792,7 @@ function pageArea(a) {
   ];
   const localFaq = [
     [`Πού βρίσκεται το ιατρείο;`, `Το ιατρείο βρίσκεται στην ${BIZ.street}, ${BIZ.city}, Τ.Κ. ${BIZ.postal}, με εύκολη πρόσβαση από ${a.name}.`],
-    [`Πώς κλείνω ραντεβού;`, `Καλέστε στο ${BIZ.phoneDisplay} — στη γραμματεία του ιατρείου θα σας εξυπηρετήσει η ${BIZ.secretary}. Μπορείτε επίσης να καλέσετε απευθείας στο ${BIZ.mobileDisplay} (${BIZ.doctor}) ή στο ${BIZ.mobile2Display} (${BIZ.doctor2}), ή να στείλετε email στο ${BIZ.email} και στο ${BIZ.email2}. Το ιατρείο λειτουργεί ${BIZ.hours}, με ραντεβού διάρκειας ${BIZ.slot}.`],
+    [`Πώς κλείνω ραντεβού;`, `Καλέστε στο ${BIZ.phoneDisplay} — στη γραμματεία του ιατρείου θα σας εξυπηρετήσει η ${BIZ.secretary}. Μπορείτε επίσης να καλέσετε απευθείας στο ${BIZ.mobileDisplay} (${BIZ.doctor}) ή στο ${BIZ.mobile2Display} (${BIZ.doctor2}). Το ιατρείο λειτουργεί ${BIZ.hours}.`],
     [`Ποιες υπηρεσίες προσφέρετε;`, `Καλύπτουμε όλο το φάσμα: τακτικό γυναικολογικό έλεγχο και Test Pap, κολποσκόπηση & HPV, παρακολούθηση εγκυμοσύνης, υπερηχογραφήματα, λαπαροσκοπική χειρουργική, υστεροσκόπηση, υπογονιμότητα, εμμηνόπαυση και αντισύλληψη.`],
   ];
   const ld = [
@@ -1027,12 +1014,11 @@ function contactSection({ id = "contact", titleTag = "h2", title, note, extraCla
             <li class="reveal"><span class="contact-label">Διεύθυνση</span><span class="contact-value">${esc(BIZ.street)}<br />${esc(BIZ.city)}, Τ.Κ. ${esc(BIZ.postal)}</span></li>
             <li class="reveal"><span class="contact-label">Τηλέφωνο ιατρείου</span><span class="contact-value"><a href="tel:${BIZ.phoneIntl}">${esc(BIZ.phoneDisplay)}</a></span></li>
             <li class="reveal"><span class="contact-label">Γραμματεία</span><span class="contact-value">${esc(BIZ.secretary)} — <a href="tel:${BIZ.phoneIntl}">${esc(BIZ.phoneDisplay)}</a></span></li>
-            <li class="reveal"><span class="contact-label">${esc(BIZ.doctor)}</span><span class="contact-value"><a href="tel:${BIZ.mobileIntl}">${esc(BIZ.mobileDisplay)}</a><br /><a href="mailto:${BIZ.email}">${esc(BIZ.email)}</a></span></li>
-            <li class="reveal"><span class="contact-label">${esc(BIZ.doctor2)}</span><span class="contact-value"><a href="tel:${BIZ.mobile2Intl}">${esc(BIZ.mobile2Display)}</a><br /><a href="mailto:${BIZ.email2}">${esc(BIZ.email2)}</a></span></li>${socialRow}
+            <li class="reveal"><span class="contact-label">${esc(BIZ.doctor)}</span><span class="contact-value"><a href="tel:${BIZ.mobileIntl}">${esc(BIZ.mobileDisplay)}</a></span></li>
+            <li class="reveal"><span class="contact-label">${esc(BIZ.doctor2)}</span><span class="contact-value"><a href="tel:${BIZ.mobile2Intl}">${esc(BIZ.mobile2Display)}</a></span></li>${socialRow}
           </ul>
           <div class="contact-actions reveal">
             <a href="tel:${BIZ.phoneIntl}" class="btn btn-primary">Καλέστε μας</a>
-            <a href="mailto:${BIZ.email}" class="btn btn-ghost">Στείλτε Email</a>
           </div>
         </div>
         <div class="contact-map reveal">
@@ -1055,7 +1041,7 @@ function pageContact() {
   return head({
     depth,
     title: "Επικοινωνία & Ραντεβού | Γυναικολόγος Θεσσαλονίκη — Εγνατίας 74",
-    desc: `Επικοινωνήστε με το ιατρείο. ${BIZ.street}, ${BIZ.city} ${BIZ.postal}. Τηλ. ${BIZ.phoneDisplay}, κινητά ${BIZ.mobileDisplay} & ${BIZ.mobile2Display}, email ${BIZ.email} & ${BIZ.email2}. ${BIZ.hours}.`,
+    desc: `Επικοινωνήστε με το ιατρείο. ${BIZ.street}, ${BIZ.city} ${BIZ.postal}. Τηλ. ${BIZ.phoneDisplay}, κινητά ${BIZ.mobileDisplay} & ${BIZ.mobile2Display}. ${BIZ.hours}.`,
     canonical: "epikoinonia.html",
     keywords: "επικοινωνία γυναικολόγος Θεσσαλονίκη, ραντεβού γυναικολόγος, τηλέφωνο γυναικολογικό ιατρείο Εγνατίας",
     ld,
@@ -1068,7 +1054,7 @@ function pageContact() {
       id: "contact",
       titleTag: "h1",
       title: "Κλείστε το ραντεβού σας",
-      note: `Το ιατρείο λειτουργεί <strong>κατόπιν ραντεβού</strong>, με διαθεσιμότητα ανά <strong>${esc(BIZ.slot)}</strong>. Επικοινωνήστε τηλεφωνικά ή με email για να κανονίσουμε την επίσκεψή σας.`,
+      note: `Το ιατρείο λειτουργεί <strong>κατόπιν ραντεβού</strong>. Επικοινωνήστε <strong>τηλεφωνικά</strong> για να κανονίσουμε την επίσκεψή σας.`,
     }) +
     `
   </main>` +
