@@ -9,7 +9,7 @@ export const BASE = "https://drlampropoulos.gr";
 
 export const BIZ = {
   name: "Specialized & Personalized Medical Care",
-  legalName: "Specialized & Personalized Medical Care — Δρ. Μενέλαος Λαμπρόπουλος & Δρ. Μαρία Βουγιούκα",
+  legalName: "Specialized & Personalized Medical Care — Δρ. Μαρία Βουγιούκα & Δρ. Μενέλαος Λαμπρόπουλος",
   doctor: "Δρ. Μενέλαος Λαμπρόπουλος",
   doctorFull: "Δρ. Μενέλαος Λαμπρόπουλος",
   doctorEn: "Dr. Menelaos Lampropoulos",
