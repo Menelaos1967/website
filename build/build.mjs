@@ -455,7 +455,6 @@ function cvBlock(depth, cv) {
           <div>
             <h3 class="cv-name">${esc(cv.name)}</h3>
             <p class="cv-role">${esc(cv.role)}</p>
-            <p class="cv-langs">Γλώσσες: ${esc(cv.languages.join(" · "))}</p>
           </div>
         </header>
         <div class="cv-groups">${groups}
@@ -469,7 +468,7 @@ function cvSection(depth) {
       <div class="container">
         <div class="section-head reveal">
           <p class="eyebrow">Βιογραφικά</p>
-          <h2 class="section-title">Σπουδές, πορεία &amp; επιστημονικό έργο</h2>
+          <h2 class="section-title">Σπουδές, εξειδίκευση &amp; επιστημονικό έργο</h2>
         </div>
         <div class="cv-stack">${[CVS[1], CVS[0]].map((cv) => cvBlock(depth, cv)).join("\n")}
         </div>
@@ -499,7 +498,6 @@ function pageAbout() {
       url: abs("oi-iatroi.html"),
       worksFor: { "@id": `${BASE}/#clinic` },
       alumniOf: { "@type": "CollegeOrUniversity", name: "Ιατρική Σχολή Αριστοτελείου Πανεπιστημίου Θεσσαλονίκης" },
-      knowsLanguage: CVS[1].languages,
     },
     {
       "@context": "https://schema.org",
@@ -511,7 +509,6 @@ function pageAbout() {
       url: abs("oi-iatroi.html"),
       worksFor: { "@id": `${BASE}/#clinic` },
       alumniOf: { "@type": "CollegeOrUniversity", name: "Ιατρική Σχολή Αριστοτελείου Πανεπιστημίου Θεσσαλονίκης" },
-      knowsLanguage: CVS[0].languages,
       ...(SOCIALS.length ? { sameAs: SOCIALS.map(([, u]) => u) } : {}),
     },
   ];
@@ -906,7 +903,7 @@ function pageBlogHub() {
       <div class="container">
         <p class="eyebrow reveal">Blog</p>
         <h1 class="page-title reveal">Ενημέρωση για τη γυναικεία υγεία</h1>
-        <p class="page-lead reveal">Χρήσιμοι οδηγοί και απαντήσεις σε συχνές ερωτήσεις, από τον Δρ. Μενέλαο Λαμπρόπουλο.</p>
+        <p class="page-lead reveal">Χρήσιμοι οδηγοί και απαντήσεις σε συχνές ερωτήσεις.</p>
       </div>
     </section>
     <section class="posts">
@@ -945,7 +942,7 @@ function pagePost(p) {
       inLanguage: "el",
       image: abs("assets/logo.svg"),
       mainEntityOfPage: abs("blog/" + p.slug + ".html"),
-      author: { "@type": "Person", name: BIZ.doctorFull },
+      author: { "@type": "Person", name: p.author },
       publisher: { "@id": `${BASE}/#clinic` },
     },
     faqLD(p.faq),
@@ -971,7 +968,7 @@ function pagePost(p) {
         <div class="container article-head-inner">
           <span class="post-cat reveal">${esc(p.cat)}</span>
           <h1 class="page-title reveal">${esc(p.title)}</h1>
-          <p class="article-meta reveal"><time datetime="${p.date}">${fmtDate(p.date)}</time> · ${esc(BIZ.doctorFull)}</p>
+          <p class="article-meta reveal"><time datetime="${p.date}">${fmtDate(p.date)}</time> · ${esc(p.author)}</p>
         </div>
       </header>
       <div class="container article-body">
