@@ -529,8 +529,8 @@ function pageAbout() {
     <section class="page-hero">
       <div class="container">
         <p class="eyebrow reveal">Οι Ιατροί</p>
-        <h1 class="page-title reveal">Δρ. Μαρία Βουγιούκα &amp; Δρ. Μενέλαος Λαμπρόπουλος</h1>
-        <p class="page-lead reveal">Δύο ιατροί στο ίδιο ιατρείο, στην Εγνατίας 74: διπλή κλινική ματιά, μεγαλύτερη διαθεσιμότητα ραντεβού και συνέχεια στην παρακολούθηση.</p>
+        <h1 class="page-title reveal">Δρ.&nbsp;Μαρία Βουγιούκα &amp; Δρ.&nbsp;Μενέλαος Λαμπρόπουλος</h1>
+        <p class="page-lead reveal">Ένα σύγχρονο μοντέλο φροντίδας στην οδό Εγνατίας 74, στην καρδιά της Θεσσαλονίκης.</p>
       </div>
     </section>
 
