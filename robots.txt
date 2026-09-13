@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://drlampropoulos.gr/sitemap.xml
+Sitemap: https://menelaoslambropoulos.gr/sitemap.xml
 

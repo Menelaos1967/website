@@ -5,7 +5,7 @@
 // ============================================================
 
 // ⚠ Το domain δεν έχει κατοχυρωθεί ακόμη — πρόταση CLINICBRAIN.
-export const BASE = "https://drlampropoulos.gr";
+export const BASE = "https://menelaoslambropoulos.gr";
 
 export const BIZ = {
   name: "Specialized & Personalized Medical Care",
